@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SocialSharing} from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

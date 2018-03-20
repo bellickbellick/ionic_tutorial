@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, LoadingController } from 'ionic-angular';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
 @Component({
@@ -19,7 +20,8 @@ export class HomePage {
   	constructor(
 		  public navCtrl: NavController,
 		  public http: HttpClient,
-		  public loadingCtrl: LoadingController
+		  public loadingCtrl: LoadingController,
+		  public socialSharing: SocialSharing
   	) {}
 
   	ionViewDidLoad() {
@@ -31,6 +33,10 @@ export class HomePage {
 				  this.posts = data['posts'];
 				  loading.dismiss();
   			});
-  	}
+	  }
+	  
+	  shareFacebook() {
+		  this.socialSharing.shareViaFacebook('シェアする文章');
+	  }
 
 }

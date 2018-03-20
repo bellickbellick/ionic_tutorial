@@ -48,7 +48,7 @@ export class ArticlePage {
       title: string,
       content: string,
       date: string
-    }>('https://public-api.wordpress.com/rest/v1.1/sites/ionicjp.wordpress.com/posts'+id)
+    }>('https://public-api.wordpress.com/rest/v1.1/sites/ionicjp.wordpress.com/posts/'+id)
     .subscribe(data => {
       this.post = data;
       loading.dismiss();
